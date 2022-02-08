@@ -24,19 +24,17 @@ public class Main  {
             int hours  = locaDate.getHour();
             int minutes = locaDate.getMinute();
             int seconds = locaDate.getSecond();
-            String time = hours  + ":"+ minutes +":"+seconds;
+
             String usuario = sc.nextLine();
 
             out.writeUTF(usuario);
-            out.writeUTF(time);
 
-            String userRes =  in.readUTF();
-            String timeRes =  in.readUTF();
-            System.out.println("bienvenido " + userRes + timeRes);
+            System.out.println("bienvenido " + in.readUTF());
             String mensaje = "";
 
             while (!mensaje.equals("bye")) {
-                mensaje = sc.next();
+
+                mensaje = sc.nextLine();
                 out.writeUTF(mensaje);
                 String envioServi = in.readUTF();
                 System.out.println(envioServi);
